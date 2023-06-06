@@ -1,0 +1,153 @@
+<template>
+    <layout>
+        <template #content>
+                <div class="container">
+      <div class="breadcrumbs">
+        パンくずリスト > <a href="">パンくずリスト</a>
+      </div>
+    </div>
+      
+    <main>
+
+
+      <form action="cart-lunch_p5_2.html">
+      <section>
+        <div class="section_header">
+          <h2 class="section_title">登録内容の確認</h2>
+        </div>
+        <div class="container">
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                商品引渡し先
+              </dt>
+              <dd>
+                学校
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                団体名
+              </dt>
+              <dd>
+                東京都立第一小学校
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                所属（学年・クラス）
+              </dt>
+              <dd>
+                １年１組
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                管理者名
+              </dt>
+              <dd>
+                秋山太郎
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                郵便番号
+              </dt>
+              <dd>
+                123-4567
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                ご住所
+              </dt>
+              <dd>
+                神奈川県横浜市神奈川区六角橋３丁目２７
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                電話番号
+              </dt>
+              <dd>
+                03-1234-5678
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form">
+            <dl>
+              <dt>
+                メールアドレス
+              </dt>
+              <dd>
+                example@example.com
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="form_frame check_form last">
+            <dl>
+              <dt>
+                パスワード
+              </dt>
+              <dd>
+                passxYz1234
+                <input type="hidden" name="" value="">
+              </dd>
+            </dl>
+          </div>
+
+          <div class="button">
+              <div class="flex_wrap">
+                <div>
+                  <a href="javascript:history.back();" class="button02">
+                    戻る
+                  </a>
+                </div>
+                <div>
+                  <input type="submit" class="button01" name="Submit" value="この内容で登録する">
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </section>
+      </form>
+
+
+    </main>
+        </template>
+    </layout>
+</template>
+
+<script setup>
+import layout from '../layout/App.vue'
+</script>
