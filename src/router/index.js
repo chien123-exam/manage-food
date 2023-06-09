@@ -1,4 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
+
 import HomeView from '../views/home/Index.vue'
 
 import Order1Day from '../views/topcalendar/Order1Day.vue'
@@ -247,5 +249,4 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
 export default router
