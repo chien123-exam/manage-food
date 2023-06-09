@@ -120,7 +120,7 @@
       </div>
       <div class="container">
 
-        <form @submit.prevent="save()">
+        <form @submit.prevent="submit()">
           <div class="login_frame">
           <div class="flex_wrap">
             <div class="login_box">
@@ -141,12 +141,12 @@
                 <div class="invalid-feedback">{{errors.pass}}</div>
               </p>
               <div class="button">
-                <!-- <div>
+                <div>
                   <input type="submit" class="button01" name="" value="ログインする">
-                </div> -->
-                <a href="" class="button02">
+                </div>
+                <!-- <a href="" class="button02">
                        ログインする
-                  </a>
+                  </a> -->
               </div>
               <div>
                 <label>
@@ -168,12 +168,12 @@
                   </p>
                   <div class="button">
                     <div>
-                      <!-- <a href="" class="button01">
+                      <a href="" class="button01">
                         新規登録する
-                      </a> -->
-                       <router-link :to="{name: 'customerregistration'}" target="_blank">
+                      </a>
+                       <!-- <router-link :to="{name: 'customerregistration'}" target="_blank">
                           お客様登録(5)
-                       </router-link><br>
+                       </router-link><br> -->
                     </div>
                   </div>
                 </div>
@@ -216,23 +216,36 @@ export default {
 
   methods: {
     validate() {
+        let isValid = true
         this.errors = {
           email: '',
           pass: ''
         }
 
         if(!this.login.email) {
-          this.errors.email = 'Vui lòng nhập email'
+          this.errors.email = 'Please enter your email'
+          isValid = false
         }
 
         if(!this.login.pass) {
-          this.errors.pass = 'Vui lòng nhập mật khẩu'
+          this.errors.pass = 'Please enter your password'
+          isValid = false
         }
+
+        return isValid
     },
 
-    save() {
-      this.validate()
-      // console.log(this.login)
+    submit() {
+        if(this.validate()) {
+          this.$request.post('http://localhost:8000/api/users',this.login).then(res => {
+             if(res.data.success) {
+              // localStorage.setItem('email', login.email)
+              // localStorage.setItem('pass', login.pass)
+               this.$router.push({name: 'home'})
+             }
+          })
+        }
+
     }
   },
 }
